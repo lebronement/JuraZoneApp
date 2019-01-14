@@ -17,6 +17,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 //import de plugins nécessaires
 import { Geolocation } from '@ionic-native/geolocation';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     StatusBar,
     SplashScreen,
       Geolocation,
+      Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

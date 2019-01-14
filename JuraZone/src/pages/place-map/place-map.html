@@ -14,5 +14,6 @@
 
 
 <ion-content padding>
-    <div class='map' leaflet [leafletOptions]='mapOptions'></div>
+   <div class="alert-msg" *ngIf='mapOptions==null'>L'application charge vos données de localisation ... Veuillez patienter (ou, vérifiez que vous avez autorisé l'app à voir votre position.</div>
+    <div class='map' *ngIf='mapOptions' leaflet [leafletOptions]='mapOptions'  [leafletLayers]='mapMarkers' (leafletMapReady)='onMapReady($event)'></div>
 </ion-content>
