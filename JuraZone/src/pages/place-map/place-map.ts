@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { Geolocation } from '@ionic-native/geolocation';
-import { latLng, MapOptions, marker, Marker, tileLayer } from 'leaflet';
+import { latLng, MapOptions, marker, Marker, tileLayer, Map } from 'leaflet';
 
 /**
  * Generated class for the PlaceMapPage page.
