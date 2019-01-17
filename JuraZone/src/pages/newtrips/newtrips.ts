@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Events } from 'ionic-angular';
 import { TripsPage } from '../trips/trips';
+import { HttpClient } from '@angular/common/http';
+import { TripRequest } from '../../models/createtrip';
+import { Trip } from '../../models/Trip';
+import { ArticletripsPage } from '../articletrips/articletrips';
+
 
 
 /**
@@ -16,8 +21,12 @@ import { TripsPage } from '../trips/trips';
 })
 export class NewtripsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  tripInfo: TripRequest;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient, public TripEvent: Events) {
+   this.tripInfo = new TripRequest();
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NewtripsPage');
@@ -27,5 +36,22 @@ export class NewtripsPage {
     this.navCtrl.push(TripsPage);
   }
  
+  createtrip(){
 
+    let tripUrl = "https://comem-appmob-2018-2019-c.herokuapp.com/api/trips";
+
+    this.http.post<Trip>(tripUrl, this.tripInfo, {
+      headers: {
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NDg5NDU4MzIuNjM4LCJzdWIiOiJmNTk2YWFmYy1jZDVjLTQ4N2YtOGUzOS1lMWM5YzY0ZTFmZGQiLCJpYXQiOjE1NDc3MzYyMzJ9.CSNZ1G103kn2oaDKHGlxc-hpLVSeEp8NWX8WIHAjJeA'
+      }
+    }).subscribe(createdTrip => {
+      this.TripEvent.publish('newTrip', true);
+      this.navCtrl.pop()})
+    
+    }
+
+  
 }
+  
+
+
