@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { NewtripsPage } from '../newtrips/newtrips';
 
 
+
 /**
  * Generated class for the TripsPage page.
  *

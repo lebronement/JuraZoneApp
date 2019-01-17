@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { TripsPage } from '../trips/trips';
+
 
 /**
  * Generated class for the NewtripsPage page.
@@ -20,5 +22,10 @@ export class NewtripsPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad NewtripsPage');
   }
+
+  goToreturntrips() {
+    this.navCtrl.push(TripsPage);
+  }
+ 
 
 }
