@@ -1,30 +1,24 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { NewtripsPage } from '../newtrips/newtrips';
-
 
 /**
- * Generated class for the TripsPage page.
+ * Generated class for the NewtripsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
 
 @Component({
-  selector: 'page-trips',
-  templateUrl: 'trips.html',
+  selector: 'page-newtrips',
+  templateUrl: 'newtrips.html',
 })
-export class TripsPage {
+export class NewtripsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TripsPage');
-  }
-
-  goToCreateTrips() {
-    this.navCtrl.push(NewtripsPage);
+    console.log('ionViewDidLoad NewtripsPage');
   }
 
 }
