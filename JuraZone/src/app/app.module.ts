@@ -16,6 +16,7 @@ import { PlaceListPage } from '../pages/place-list/place-list';
 import { PlaceMapPage } from '../pages/place-map/place-map';
 import { TripsPage } from '../pages/trips/trips';
 import { NewtripsPage } from '../pages/newtrips/newtrips';
+import { ArticletripsPage } from '../pages/articletrips/articletrips';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -36,7 +37,8 @@ import { PictureProvider } from '../providers/picture/picture';
     PlaceListPage,
       PlaceMapPage,
       TripsPage,
-      NewtripsPage
+      NewtripsPage,
+      ArticletripsPage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ import { PictureProvider } from '../providers/picture/picture';
     PlaceListPage,
       PlaceMapPage,
       TripsPage,
-      NewtripsPage
+      NewtripsPage,
+      ArticletripsPage
   ],
   providers: [
     StatusBar,

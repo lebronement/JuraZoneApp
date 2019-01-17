@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { NewtripsPage } from '../newtrips/newtrips';
+import { ArticletripsPage } from '../articletrips/articletrips';
 
 
 
@@ -26,6 +27,10 @@ export class TripsPage {
 
   goToCreateTrips() {
     this.navCtrl.push(NewtripsPage);
+  }
+
+  goToSeeTrips() {
+    this.navCtrl.push(ArticletripsPage);
   }
 
 }
