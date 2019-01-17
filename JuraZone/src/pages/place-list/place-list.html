@@ -14,7 +14,18 @@
 
 
 <ion-content padding>
-<ul>
-    <ion-item *ngFor='let place of places'>{{ place.name }}</ion-item>
-</ul>
+
+    
+
+<ion-list>
+  <ion-item *ngFor='let place of places'>
+    <ion-thumbnail item-start>
+      <img *ngIf='place.pictureUrl=="https://www.example.com/picture.jpg"' src="assets/imgs/place-default.png">
+      <img *ngIf='place.pictureUrl!="https://www.example.com/picture.jpg"' src="place.pictureUrl">
+    </ion-thumbnail>
+    <h2>{{place.name}}</h2>
+    <p>{{place.description}}</p>
+    <button ion-button clear item-end (click)='seeDetails(place)'>View</button>
+  </ion-item>
+</ion-list>
 </ion-content>
