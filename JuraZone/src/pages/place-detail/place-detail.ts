@@ -25,6 +25,8 @@ export class PlaceDetailPage {
     mapOptions: MapOptions;
     mapMarkers: Marker[];
     map: Map;
+    
+    
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation) {
   }

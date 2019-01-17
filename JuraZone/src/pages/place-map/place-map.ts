@@ -4,6 +4,9 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { latLng, MapOptions, marker, Marker, tileLayer, Map } from 'leaflet';
 
+import { PlaceProvider } from '../../providers/place/place';
+import { Place } from'../../models/place';
+
 /**
  * Generated class for the PlaceMapPage page.
  *
@@ -17,10 +20,12 @@ import { latLng, MapOptions, marker, Marker, tileLayer, Map } from 'leaflet';
 })
 export class PlaceMapPage {
      mapOptions: MapOptions;
-    mapMarkers: Marker[];
+    mapMarkers: [];
+    
     map: Map;
+    places: Place[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation, private placeService : PlaceProvider ) {
   }
 
   ionViewDidLoad() {
@@ -28,12 +33,14 @@ export class PlaceMapPage {
       console.log(`User is at ${position.coords.latitude}, ${position.coords.longitude}`);
       const tileLayerUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
       const tileLayerOptions = { maxZoom: 18 };
-        this.mapMarkers = [
-          marker([ 46.778186, 6.641524 ]),
-          marker([ 46.780796, 6.647395 ]),
-          marker([ 46.784992, 6.652267 ]),
-            marker([position.coords.latitude, position.coords.longitude]).bindTooltip('TU ES LA')
-        ];
+       this.placeService.getPlaces().subscribe(places => {
+      this.places = places;
+        console.log(this.mapMarkers);
+           this.mapMarkers = new Array();
+      places.forEach((place) => {
+        this.mapMarkers.push(marker(place.location.coordinates).bindTooltip(place.name));
+      });
+    });
       this.mapOptions = {
         layers: [
           tileLayer(tileLayerUrl, tileLayerOptions)
@@ -44,6 +51,9 @@ export class PlaceMapPage {
     }).catch(err => {
       console.warn(`Could not retrieve user position because: ${err.message}`);
     });
+  }
+     private loadPlaces() {
+    
   }
     
   onMapReady(map: Map) {

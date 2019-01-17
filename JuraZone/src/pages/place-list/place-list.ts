@@ -25,10 +25,10 @@ export class PlaceListPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PlaceListPage');
-       this.loadIssues();
+       this.loadPlaces();
   }
     
- private loadIssues() {
+ private loadPlaces() {
     
     this.placeService.getPlaces().subscribe(placesList => {
       
