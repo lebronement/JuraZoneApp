@@ -14,5 +14,7 @@
 
 
 <ion-content padding>
-
+<ul>
+    <ion-item *ngFor='let place of places'>{{ place.name }}</ion-item>
+</ul>
 </ion-content>

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { PlaceProvider } from '../../providers/place/place';
+import { Place } from'../../models/place';
+
 /**
  * Generated class for the PlaceListPage page.
  *
@@ -13,12 +16,23 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'place-list.html',
 })
 export class PlaceListPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    places: Place[];
+    
+    name: string;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private placeService : PlaceProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PlaceListPage');
+       this.loadIssues();
   }
-
+    
+ private loadIssues() {
+    
+    this.placeService.getPlaces().subscribe(placesList => {
+      
+        this.places = placesList;
+      
+    });
+  }
 }
