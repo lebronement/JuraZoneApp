@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { PlaceMapPage } from '../place-map/place-map';
+
 /**
  * Generated class for the PlacesPage page.
  *
@@ -13,6 +15,8 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'places.html',
 })
 export class PlacesPage {
+     PlaceMap = PlaceMap;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
