@@ -1,28 +1,28 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
-import { PlaceMapPage } from '../place-map/place-map';
+import { LoginPage } from '../login/login';
 
 /**
- * Generated class for the PlacesPage page.
+ * Generated class for the SignUpPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
 
 @Component({
-  selector: 'page-places',
-  templateUrl: 'places.html',
+  selector: 'page-sign-up',
+  templateUrl: 'sign-up.html',
 })
-export class PlacesPage {
-    
-
+export class SignUpPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PlacesPage');
+    console.log('ionViewDidLoad SignUpPage');
+  }
+  signuppage() {
+    this.navCtrl.push(LoginPage);
   }
 
 }
