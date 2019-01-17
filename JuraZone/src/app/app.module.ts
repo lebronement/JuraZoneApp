@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
+import { IonicStorageModule } from '@ionic/storage';
 
 //pages de base du thème
 import { HomePage } from '../pages/home/home';
@@ -26,6 +27,9 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { Camera } from '@ionic-native/camera';
 import { PictureProvider } from '../providers/picture/picture';
+import { LoginProvider } from '../providers/login/login';
+import { AuthProvider } from '../providers/auth/auth';
+import { AuthProvider } from '../providers/auth/auth';
 
 @NgModule({
   declarations: [
@@ -44,8 +48,9 @@ import { PictureProvider } from '../providers/picture/picture';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     LeafletModule.forRoot(), 
-      HttpClientModule,
-      HttpModule
+    HttpClientModule,
+    HttpModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -66,7 +71,9 @@ import { PictureProvider } from '../providers/picture/picture';
       Geolocation,
       Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PictureProvider
+    PictureProvider,
+    LoginProvider,
+    AuthProvider
   ]
 })
 export class AppModule {}
