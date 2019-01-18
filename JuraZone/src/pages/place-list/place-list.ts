@@ -5,6 +5,8 @@ import { PlaceProvider } from '../../providers/place/place';
 import { Place } from'../../models/place';
 import { PlaceDetailPage } from '../place-detail/place-detail';
 
+import { PlaceCreatePage } from '../place-create/place-create';
+
 /**
  * Generated class for the PlaceListPage page.
  *
@@ -41,4 +43,8 @@ export class PlaceListPage {
     console.log("détails", place);
     this.navCtrl.push(PlaceDetailPage, {place: place});
   }
+    
+    goCreatePage(){
+          this.navCtrl.push(PlaceCreatePage);
+    }
 }

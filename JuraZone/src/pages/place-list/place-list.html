@@ -25,7 +25,17 @@
     </ion-thumbnail>
     <h2>{{place.name}}</h2>
     <p>{{place.description}}</p>
-    <button ion-button clear item-end (click)='seeDetails(place)'>View</button>
+    <button ion-button clear item-end (click)='seeDetails(place)'>Voir détails</button>
   </ion-item>
 </ion-list>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button color="dark" clear (click)="goCreatePage()">
+      <ion-icon name="add-circle" margin-right></ion-icon>
+      Ajouter une nouvelle place
+    </button>
+  </ion-toolbar>
+</ion-footer>
+

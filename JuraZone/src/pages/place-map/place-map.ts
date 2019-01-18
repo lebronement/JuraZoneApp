@@ -7,6 +7,8 @@ import { latLng, MapOptions, marker, Marker, tileLayer, Map } from 'leaflet';
 import { PlaceProvider } from '../../providers/place/place';
 import { Place } from'../../models/place';
 
+import { PlaceCreatePage } from '../place-create/place-create';
+
 /**
  * Generated class for the PlaceMapPage page.
  *
@@ -20,10 +22,15 @@ import { Place } from'../../models/place';
 })
 export class PlaceMapPage {
      mapOptions: MapOptions;
-    mapMarkers: [];
+    mapMarkers: Marker[];
+    userMarker: Marker;
     
     map: Map;
     places: Place[];
+    
+    
+   
+    
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation, private placeService : PlaceProvider ) {
   }
@@ -38,9 +45,11 @@ export class PlaceMapPage {
         console.log(this.mapMarkers);
            this.mapMarkers = new Array();
       places.forEach((place) => {
-        this.mapMarkers.push(marker(place.location.coordinates).bindTooltip(place.name));
+        this.mapMarkers.push(marker(place.location.coordinates).bindTooltip(place.name) 
+         );
       });
     });
+       
       this.mapOptions = {
         layers: [
           tileLayer(tileLayerUrl, tileLayerOptions)
@@ -52,10 +61,8 @@ export class PlaceMapPage {
       console.warn(`Could not retrieve user position because: ${err.message}`);
     });
   }
-     private loadPlaces() {
-    
-  }
-    
+   
+     
   onMapReady(map: Map) {
     this.map = map;
       this.map.on('moveend', () => {
@@ -63,6 +70,10 @@ export class PlaceMapPage {
       console.log(`Map moved to ${center.lng}, ${center.lat}`);
     });
   }
+    
+    goCreatePage(){
+          this.navCtrl.push(PlaceCreatePage);
+    }
     
 
 }
