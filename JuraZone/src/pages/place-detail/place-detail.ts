@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { Place } from'../../models/place';
 
 import { Geolocation } from '@ionic-native/geolocation';
 import { latLng, MapOptions, marker, Marker, tileLayer, Map } from 'leaflet';
+import { PlaceProvider } from '../../providers/place/place';
 
 import { PlaceUpdatePage } from '../place-update/place-update';
+
+import { PlacesPage } from '../places/places';
 /**
  * Generated class for the PlaceDetailPage page.
  *
@@ -28,7 +31,7 @@ export class PlaceDetailPage {
     
     
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation, public alertCtrl: AlertController, private placeService : PlaceProvider) {
   }
 
   ionViewDidLoad() {
@@ -68,6 +71,33 @@ export class PlaceDetailPage {
     console.log("update", place);
     this.navCtrl.push(PlaceUpdatePage, {place: place});
   }
+   deletePlace() {
+        const confirm = this.alertCtrl.create({
+            title: 'Delete Place?',
+            message: 'Voulez-vous vraiment supprimer cette place?',
+            buttons: [
+                {
+                    text: 'Oui',
+                    handler: () => {
+                        this.placeService.deletePlace(this.place.id).subscribe();
+                        this.navCtrl.setRoot(PlacesPage, { opentab: 1 });
+                        this.placeService.getPlaces().subscribe(placeList => {
+                            this.placeList = placeList;
+
+                        });
+                        console.log('Do you want to delete this place? - Yes clicked');
+                    }
+                },
+                {
+                    text: 'Non',
+                    handler: () => {
+                        console.log('Do you want to delete this place? - No clicked');
+                    }
+                }
+            ]
+        });
+        confirm.present();
+    }
     
 }
 

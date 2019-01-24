@@ -5,6 +5,7 @@ import { config } from '../../app/config';
 
 import { PlaceRequest } from '../../models/createplace';
 import { Place } from '../../models/place';
+import { PlaceProvider } from '../../providers/place/place';
 
 import { Geolocation } from '@ionic-native/geolocation';
 import { latLng, MapOptions, marker, Marker, tileLayer, Map } from 'leaflet';
@@ -25,7 +26,7 @@ export class PlaceCreatePage {
     mapOptions: MapOptions;
     map:Map;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,  private http: HttpClient, public PlaceEvent: Events, private geolocation: Geolocation) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,  private http: HttpClient, public PlaceEvent: Events, private geolocation: Geolocation, private placeService : PlaceProvider) {
        this.placeInfo = new PlaceRequest();
   }
 
@@ -49,17 +50,7 @@ export class PlaceCreatePage {
   }
     
       createplace(){
-
-    let placeUrl = config.apiUrl+"/places";
-          console.log(this.placeInfo.coordinates)
-
-    this.http.post<Place>(placeUrl, this.placeInfo, {
-      headers: {
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NDg5NDU4MzIuNjM4LCJzdWIiOiJmNTk2YWFmYy1jZDVjLTQ4N2YtOGUzOS1lMWM5YzY0ZTFmZGQiLCJpYXQiOjE1NDc3MzYyMzJ9.CSNZ1G103kn2oaDKHGlxc-hpLVSeEp8NWX8WIHAjJeA'
-      }
-    }).subscribe(createdPlace => {
-      this.PlaceEvent.publish('newPlace', true);
-      this.navCtrl.pop()})
+          this.placeService.createPlace(placeInfo);
     
     }
     
