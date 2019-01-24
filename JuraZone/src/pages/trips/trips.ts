@@ -43,16 +43,7 @@ export class TripsPage {
   }
 
 
-  /**
-   * ionViewDidEnter(){
-   * appel http
-   * 
-   * 
-   * 
-   * }
-   * 
-   */
-
+  
 
   goToCreateTrips() {
     this.navCtrl.push(NewtripsPage);
