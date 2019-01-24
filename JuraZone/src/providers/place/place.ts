@@ -20,4 +20,16 @@ export class PlaceProvider {
     return this.http
       .get<Place[]>(config.apiUrl+'/places');
   }
+    deletePlace(id: string): Observable<{}> {
+    const deletePlaceUrl = `${config.apiUrl}/places/` + id;
+    return this.http.delete(deletePlaceUrl);
+  }
+    createPlace(placeInfo){
+       let placeUrl = config.apiUrl+"/places"; 
+
+    this.http.post<Place>(placeUrl, this.placeInfo).subscribe(createdPlace => {
+      this.PlaceEvent.publish('newPlace', true);
+      this.navCtrl.pop()})
+    
+    }
 }

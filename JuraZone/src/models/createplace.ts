@@ -1,4 +1,4 @@
-export class Place {
+export class PlaceRequest {
     name: String;
     description: String;
      location: {

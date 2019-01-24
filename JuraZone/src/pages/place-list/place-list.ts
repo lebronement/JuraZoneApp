@@ -3,6 +3,9 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { PlaceProvider } from '../../providers/place/place';
 import { Place } from'../../models/place';
+import { PlaceDetailPage } from '../place-detail/place-detail';
+
+import { PlaceCreatePage } from '../place-create/place-create';
 
 /**
  * Generated class for the PlaceListPage page.
@@ -24,10 +27,10 @@ export class PlaceListPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PlaceListPage');
-       this.loadIssues();
+       this.loadPlaces();
   }
     
- private loadIssues() {
+ private loadPlaces() {
     
     this.placeService.getPlaces().subscribe(placesList => {
       
@@ -35,4 +38,13 @@ export class PlaceListPage {
       
     });
   }
+    
+     private seeDetails (place: Place) {
+    console.log("détails", place);
+    this.navCtrl.push(PlaceDetailPage, {place: place});
+  }
+    
+    goCreatePage(){
+          this.navCtrl.push(PlaceCreatePage);
+    }
 }

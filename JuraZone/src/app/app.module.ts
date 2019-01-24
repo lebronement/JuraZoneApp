@@ -19,6 +19,10 @@ import { PlaceMapPage } from '../pages/place-map/place-map';
 import { TripsPage } from '../pages/trips/trips';
 import { LoginPage } from '../pages/login/login';
 import { SignUpPage } from '../pages/sign-up/sign-up';
+import { PlaceDetailPage } from '../pages/place-detail/place-detail';
+import { PlaceUpdatePage } from '../pages/place-update/place-update';
+import { PlaceCreatePage } from '../pages/place-create/place-create';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -44,7 +48,10 @@ import { AuthProvider } from '../providers/auth/auth';
       PlaceMapPage,
       TripsPage,
       LoginPage,
-      SignUpPage
+      SignUpPage,
+      PlaceDetailPage,
+      PlaceUpdatePage,
+      PlaceCreatePage
   ],
   imports: [
     BrowserModule,
@@ -65,7 +72,10 @@ import { AuthProvider } from '../providers/auth/auth';
       PlaceMapPage,
       TripsPage,
       LoginPage,
-      SignUpPage
+      SignUpPage,
+      PlaceDetailPage,
+      PlaceUpdatePage,
+      PlaceCreatePage
   ],
   providers: [
     StatusBar,

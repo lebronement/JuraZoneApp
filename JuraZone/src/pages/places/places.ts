@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { PlaceMapPage } from '../place-map/place-map'
-import { PlaceListPage } from '../place-list/place-list'
+import { PlaceMapPage } from '../place-map/place-map';
+import { PlaceListPage } from '../place-list/place-list';
  
 /**
  * Generated class for the PlacesPage page.
