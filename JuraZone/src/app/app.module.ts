@@ -26,6 +26,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { Camera } from '@ionic-native/camera';
 import { PictureProvider } from '../providers/picture/picture';
+import { TripProvider } from '../providers/tripprovider';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { PictureProvider } from '../providers/picture/picture';
       Geolocation,
       Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PictureProvider
+    PictureProvider,
+    TripProvider
   ]
 })
 export class AppModule {}

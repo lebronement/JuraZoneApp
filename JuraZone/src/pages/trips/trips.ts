@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { NewtripsPage } from '../newtrips/newtrips';
 import { ArticletripsPage } from '../articletrips/articletrips';
+import { Trip } from '../../models/Trip';
+import { TripProvider } from '../../providers/tripprovider';
+
 
 
 
@@ -18,16 +21,44 @@ import { ArticletripsPage } from '../articletrips/articletrips';
 })
 export class TripsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+
+  trips: Trip[]; 
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private tripService: TripProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TripsPage');
+    this.loadTrips();
   }
+
+  private loadTrips(){
+
+    this.tripService.getTrips().subscribe(tripslist => {this.trips=tripslist});
+
+  console.log(this.trips);
+
+
+  }
+
+
+  /**
+   * ionViewDidEnter(){
+   * appel http
+   * 
+   * 
+   * 
+   * }
+   * 
+   */
+
 
   goToCreateTrips() {
     this.navCtrl.push(NewtripsPage);
   }
+
+
 
   goToSeeTrips() {
     this.navCtrl.push(ArticletripsPage);
