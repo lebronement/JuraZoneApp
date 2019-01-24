@@ -10,6 +10,8 @@ import { User } from '../../models/user';
 import { delayWhen } from 'rxjs/operators';
 import { Storage } from '@ionic/storage';
 
+import  { config } from "../../app/config";
+
 /**
  * Authentication service for login/logout.
  */
@@ -55,7 +57,7 @@ export class AuthProvider {
     }),
     map(auth => {
       this.authSource.next(auth);
-      console.log(`User ${auth.user.name} logged in`);
+      console.log('User ${auth.user.name} logged in');
       return auth.user;
     })
   );
@@ -70,5 +72,11 @@ export class AuthProvider {
     private saveAuth(auth: AuthResponse): Observable<void> {
   return Observable.fromPromise(this.storage.set('auth', auth));
 }
+createUser(authRequest: AuthRequest): Observable<User> {
 
+    const createUserUrl = config.apiUrl+"/users";
+    return this.http.post<User>(createUserUrl, authRequest);
+  }
+                                                     
 }
+                                                     
