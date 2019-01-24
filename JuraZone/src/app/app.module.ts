@@ -35,6 +35,7 @@ import { PictureProvider } from '../providers/picture/picture';
 import { PlaceProvider } from '../providers/place/place';
 import { LoginProvider } from '../providers/login/login';
 import { AuthProvider } from '../providers/auth/auth';
+import { UsersProvider } from '../providers/usersprovider';
 
 
 @NgModule({
@@ -86,7 +87,8 @@ import { AuthProvider } from '../providers/auth/auth';
     PictureProvider,
       PlaceProvider,
     LoginProvider,
-    AuthProvider
+    AuthProvider,
+    UsersProvider
   ]
 })
 export class AppModule {}
