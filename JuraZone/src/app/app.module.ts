@@ -31,7 +31,7 @@ import { PictureProvider } from '../providers/picture/picture';
 import { PlaceProvider } from '../providers/place/place';
 import { LoginProvider } from '../providers/login/login';
 import { AuthProvider } from '../providers/auth/auth';
-import { AuthProvider } from '../providers/auth/auth';
+
 
 @NgModule({
   declarations: [

@@ -23,12 +23,12 @@ export class MyApp {
   // TODO: redirect the user to the login page if not authenticated.
   // Direct the user to the correct page depending on whether he or she is logged in.
   this.auth.isAuthenticated().subscribe(authenticated => {
-    if (authenticated) {
-      this.rootPage = TabsPage;
-    } else {
-      this.rootPage = LoginPage;
-    }
-  });
+  if (authenticated) {
+    this.rootPage = TabsPage;
+  } else {
+    this.rootPage = LoginPage;
+  }
+});
 
 }
 }
