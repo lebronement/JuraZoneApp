@@ -50,7 +50,7 @@ export class PlaceCreatePage {
   }
     
       createplace(){
-          this.placeService.createPlace(placeInfo);
+          this.placeService.createPlace(this.placeInfo);
     
     }
     
