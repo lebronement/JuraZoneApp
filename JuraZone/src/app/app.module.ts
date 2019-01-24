@@ -28,6 +28,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { Camera } from '@ionic-native/camera';
 import { PictureProvider } from '../providers/picture/picture';
+import { PlaceProvider } from '../providers/place/place';
 import { LoginProvider } from '../providers/login/login';
 import { AuthProvider } from '../providers/auth/auth';
 import { AuthProvider } from '../providers/auth/auth';
@@ -73,6 +74,7 @@ import { AuthProvider } from '../providers/auth/auth';
       Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PictureProvider,
+      PlaceProvider,
     LoginProvider,
     AuthProvider
   ]
