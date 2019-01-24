@@ -16,9 +16,7 @@ import { PlaceListPage } from '../place-list/place-list'
   templateUrl: 'places.html',
 })
 export class PlacesPage {
-   
 
-     PlaceMap = this.PlaceMap;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
