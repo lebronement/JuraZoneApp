@@ -18,11 +18,14 @@ import { PlacesPage } from '../pages/places/places';
 import { PlaceListPage } from '../pages/place-list/place-list';
 import { PlaceMapPage } from '../pages/place-map/place-map';
 import { TripsPage } from '../pages/trips/trips';
+
 import { LoginPage } from '../pages/login/login';
 import { SignUpPage } from '../pages/sign-up/sign-up';
 import { PlaceDetailPage } from '../pages/place-detail/place-detail';
 import { PlaceUpdatePage } from '../pages/place-update/place-update';
 import { PlaceCreatePage } from '../pages/place-create/place-create';
+import { NewtripsPage } from '../pages/newtrips/newtrips';
+import { ArticletripsPage } from '../pages/articletrips/articletrips';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -33,11 +36,13 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { Camera } from '@ionic-native/camera';
 import { PictureProvider } from '../providers/picture/picture';
+
 import { PlaceProvider } from '../providers/place/place';
 import { LoginProvider } from '../providers/login/login';
 import { AuthProvider } from '../providers/auth/auth';
 import { UsersProvider } from '../providers/usersprovider';
 import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-interceptor';
+import { TripProvider } from '../providers/tripprovider';
 
 
 @NgModule({
@@ -54,7 +59,10 @@ import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-inte
       SignUpPage,
       PlaceDetailPage,
       PlaceUpdatePage,
-      PlaceCreatePage
+      PlaceCreatePage,
+      NewtripsPage,
+      ArticletripsPage
+
   ],
   imports: [
     BrowserModule,
@@ -74,11 +82,14 @@ import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-inte
     PlaceListPage,
       PlaceMapPage,
       TripsPage,
+
       LoginPage,
       SignUpPage,
       PlaceDetailPage,
       PlaceUpdatePage,
-      PlaceCreatePage
+      PlaceCreatePage,
+      NewtripsPage,
+      ArticletripsPage
   ],
   providers: [
     StatusBar,
@@ -87,13 +98,15 @@ import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-inte
       Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PictureProvider,
+
       PlaceProvider,
     LoginProvider,
     AuthProvider,
     UsersProvider,
     AuthInterceptorProvider,
-      { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true }
+      { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },
 
+    TripProvider
   ]
 })
 export class AppModule {}
