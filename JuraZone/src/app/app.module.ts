@@ -1,5 +1,6 @@
 
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule, ErrorHandler
+       } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -36,6 +37,7 @@ import { PlaceProvider } from '../providers/place/place';
 import { LoginProvider } from '../providers/login/login';
 import { AuthProvider } from '../providers/auth/auth';
 import { UsersProvider } from '../providers/usersprovider';
+import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-interceptor';
 
 
 @NgModule({
@@ -88,7 +90,10 @@ import { UsersProvider } from '../providers/usersprovider';
       PlaceProvider,
     LoginProvider,
     AuthProvider,
-    UsersProvider
+    UsersProvider,
+    AuthInterceptorProvider,
+      { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true }
+
   ]
 })
 export class AppModule {}
