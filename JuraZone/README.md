@@ -1,8 +1,8 @@
 # Projet d'application mobile
 
   - [Introduction](#introduction)
-  - [Tester l'application](#app-preview)
-  - [Présentation de l'application](#presentation-of-the-app)
+  - [Utilisation](#utilisation)
+  - [Présentation](#presentation)
   - [Procédure d'installation](#installation-procedure)
 
 ## Introduction
@@ -10,11 +10,11 @@
 Dans le cadre du "AppMob" en troisième année de Bachelor en Ingénierie des médias, nous avions pour mission de créer une API. 
 
 
-## Utiliser l'application
+## Utilisation
 
 Nous vous recomandons de télécharger notre application et de la compiller avec Ionic.
 
-## Présentation de l'application
+## Présentation
 
 Cette application vous permet de centraliser tous vos trips et tous les endroits que vous avez visités. Vous pourrez donc créer le trip de votre choix, à la place de votre choix. Notre application utilise de la géolocalisation. 
 
