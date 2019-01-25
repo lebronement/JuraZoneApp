@@ -34,7 +34,7 @@ Afin de vous retrouver dans notre application, voici la liste des différentes f
 
 ## Utilisation
 
-Nous vous recomandons de télécharger notre application et de la compiller avec Ionic.
+Nous vous recomandons de télécharger notre application et de la compiler avec Ionic.
 
 ## Technologie
 
