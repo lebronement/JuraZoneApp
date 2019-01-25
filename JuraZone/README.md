@@ -6,6 +6,9 @@
   - [Technologie](#technologie)
   - [Installation](#installation)
   - [Smartphone](#smartphone)
+  - [Visuels](#visuels)
+
+
 
 ## Introduction
 
@@ -73,7 +76,7 @@ Lorsque vous lancerez l'application, le page de création de comptes s'ouvrira :
   
 ![Smartphone app](https://raw.githubusercontent.com/lebronement/JuraZoneApp/master/screenshot/Sign-up.JPG "Smartphone app")
   
-Une fois entré dans l'application, après être passé par le login, vous arriverez sur votre page "User". Votre username est affiché en haut de la page : 
+Une fois entré dans l'application, après être passé par le login, vous arriverez sur votre page "User". Votre username ainsi que la date de votre inscription est affiché en haut de la page : 
   
 ![Smartphone app](https://raw.githubusercontent.com/lebronement/JuraZoneApp/master/screenshot/User.JPG "Smartphone app")
 
