@@ -89,6 +89,7 @@ import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-inte
     PictureProvider,
       PlaceProvider,
     LoginProvider,
+      UsersProvider,
     AuthProvider,
     UsersProvider,
     AuthInterceptorProvider,
