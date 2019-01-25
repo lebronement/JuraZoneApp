@@ -79,7 +79,7 @@ export class PlaceDetailPage {
                 {
                     text: 'Oui',
                     handler: () => {
-                        this.placeService.deletePlace(this.place.id).subscribe();
+                        this.placeService.deletePlace(this.place).subscribe();
                         this.navCtrl.setRoot(PlacesPage, { opentab: 1 });
                         this.placeService.getPlaces().subscribe(placeList => {
                             this.placeList = placeList;
