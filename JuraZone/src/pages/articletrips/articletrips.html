@@ -7,12 +7,28 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Articletrips</ion-title>
+    <ion-title>Articletrip</ion-title>
   </ion-navbar>
 
 </ion-header>
-<button ion-button id="edit" (click)="editTrip(trip)"></button>
+
+
+
 
 <ion-content padding>
+
+    <ion-card>
+        <ion-card-header>
+                <h1>{{trip?.title}}</h1>
+        </ion-card-header>
+        <ion-card-content>
+                <h2>{{trip?.description}}</h2>
+                <br>
+              <ion-icon name="md-time"> {{trip?.updatedAt | date:'dd/MM/yyyy'}}</ion-icon>
+        </ion-card-content>
+      </ion-card>
+
+    <button ion-button block id=btn-ajouterplace color="dark">Ajouter une place</button>
+    <button ion-button (click)='deleteTrip(trip)' outline>Supprimer</button>
 
 </ion-content>

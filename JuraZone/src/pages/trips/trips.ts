@@ -51,8 +51,8 @@ export class TripsPage {
 
 
 
-  goToSeeTrips() {
-    this.navCtrl.push(ArticletripsPage);
+  goToSeeTrips(trip : Trip) {
+    this.navCtrl.push(ArticletripsPage, {trip : trip});
   }
 
 }

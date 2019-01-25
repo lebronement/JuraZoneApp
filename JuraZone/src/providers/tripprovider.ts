@@ -20,10 +20,10 @@ export class TripProvider {
     return this.http
       .get<Trip[]>(config.apiUrl+'/trips');
   }
-  //  deletePlace(id: string): Observable<{}> {
-  //  const deletePlaceUrl = ${config.apiUrl}/places/ + id;
-  //  return this.http.delete(deletePlaceUrl);
-  //}
+   deleteTrip(id: string): Observable<{}> {
+   const deleteTripsUrl = (config.apiUrl+'/trips/'+id);
+   return this.http.delete(deleteTripsUrl);
+  }
    // createPlace(placeInfo){
     //   let placeUrl = config.apiUrl+"/places"; 
 
@@ -31,5 +31,5 @@ export class TripProvider {
    //   this.PlaceEvent.publish('newPlace', true);
     //  this.navCtrl.pop()})
     
-   // }
+    
 }
