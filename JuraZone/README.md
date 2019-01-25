@@ -9,11 +9,6 @@
 
 Dans le cadre du "AppMob" en troisième année de Bachelor en Ingénierie des médias, nous avions pour mission de créer une API. 
 
-
-## Utilisation
-
-Nous vous recomandons de télécharger notre application et de la compiller avec Ionic.
-
 ## Presentation
 
 Cette application vous permet de centraliser tous vos trips et tous les endroits que vous avez visités. Vous pourrez donc créer le trip de votre choix, à la place de votre choix. Notre application utilise de la géolocalisation. 
@@ -26,13 +21,17 @@ Afin de vous retrouver dans notre application, voici la liste des différentes f
 - Login
 - Suppression d'un compte
 - Ajout d'un trip
-- Rechercher des trips
+- Recherche de trips
 - (Modification d'un trips)
-- Supprimer un trip
+- Suppression d'un trip
 - Ajout d'une place
 - Géolocalisation d'une place
-- Supprimer une place
+- Suppression d'une place
 - Prendre une photo
+
+## Utilisation
+
+Nous vous recomandons de télécharger notre application et de la compiller avec Ionic.
 
 ## Installation
 
