@@ -7,7 +7,7 @@
 
 ## Introduction
 
-Dans le cadre du "AppMob" en troisième année de Bachelor en Ingénierie des médias, nous avions pour mission de créer une API. 
+Dans le cadre du cours "AppMob" en troisième année de Bachelor en Ingénierie des médias, nous avions pour mission de créer une application. 
 
 ## Presentation
 
