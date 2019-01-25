@@ -30,7 +30,7 @@ Afin de vous retrouver dans notre application, voici la liste des différentes f
 - Suppression d'un trip
 - Ajout d'une place
 - Choix du trip ou sera la place
-- Géolocalisation d'une place
+- Géolocalisation d'une place selon votre position
 - Suppression d'une place
 - Prendre une photo
 
