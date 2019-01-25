@@ -1,4 +1,4 @@
-# Projet d'application mobile
+# JuraZoneApp
 
   - [Introduction](#introduction)
   - [Utilisation](#utilisation)
@@ -25,6 +25,7 @@ Afin de vous retrouver dans notre application, voici la liste des différentes f
 - (Modification d'un trips)
 - Suppression d'un trip
 - Ajout d'une place
+- Choix du trip ou sera la place
 - Géolocalisation d'une place
 - Suppression d'une place
 - Prendre une photo
@@ -35,3 +36,10 @@ Nous vous recomandons de télécharger notre application et de la compiller avec
 
 ## Installation
 
+Vous pouvez cloner ce projet en entrant dans votre console :
+```
+git clone git@github.com:lebronement/JuraZoneApp.git
+cd JuraZoneApp
+npm install
+
+```
