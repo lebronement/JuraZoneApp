@@ -14,20 +14,25 @@
 
 
 <ion-content padding>
+   <button ion-button (click)='takePicture()' type="button">Prendre une photo</button>
+          <img *ngIf='picture' [src]='picture.url' /><br>
     <form (submit)='onSubmit($event)' >
         <ion-list>
 
             <ion-item>
                 <ion-label color="primary" stacked>Nom</ion-label>
-                <ion-input type="text" name="ion-title" placeholder="Ajouter un nom" [(ngModel)]="placeInfo.name"></ion-input>
+                <ion-input type="text" name="ion-title" placeholder="Ajouter un nom" [(ngModel)]="place.name"></ion-input>
             </ion-item>
 
             <ion-item>
                 <ion-label floating>Description</ion-label>
-                <ion-textarea rows="5" type='text' name='ion-description' [(ngModel)]="placeInfo.description"></ion-textarea>
+                <ion-textarea rows="5" type='text' name='ion-description' [(ngModel)]="place.description"></ion-textarea>
             </ion-item>
             
+            
+            
             <button ion-button color="dark" large id="ajouter" type="submit" >Ajouter</button>
+            
 
         </ion-list>
     </form>

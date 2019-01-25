@@ -6,7 +6,7 @@ export class Place {
             number,
             number
         ],
-        type: point
+        type: string
     };
     tripHref: String;
     tripId: String;

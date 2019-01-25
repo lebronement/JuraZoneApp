@@ -8,8 +8,14 @@ import { PlaceRequest } from '../../models/createplace';
 import { Place } from '../../models/place';
 import { PlaceProvider } from '../../providers/place/place';
 
+import { TripsPage } from "../trips/trips"
+
 import { Geolocation } from '@ionic-native/geolocation';
 import { latLng, MapOptions, marker, Marker, tileLayer, Map } from 'leaflet';
+
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { QimgImage } from '../../models/qimg-image';
+import { PictureProvider } from '../../providers/picture/picture';
 
 /**
  * Generated class for the PlaceCreatePage page.
@@ -36,9 +42,13 @@ export class PlaceCreatePage {
     
     @ViewChild(NgForm)
     form: NgForm;
+    
+    pictureData: string;
+ picture: QimgImage;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,  private http: HttpClient, public PlaceEvent: Events, private geolocation: Geolocation, private placeService : PlaceProvider) {
-       this.placeInfo = new PlaceRequest();
+  constructor(public navCtrl: NavController, public navParams: NavParams,  private http: HttpClient, public PlaceEvent: Events, private geolocation: Geolocation, private placeService : PlaceProvider, private camera: Camera, private pictureService: PictureProvider) {
+       this.place = new PlaceRequest();
+        
   }
 
   ionViewDidLoad() {
@@ -47,8 +57,8 @@ export class PlaceCreatePage {
       const tileLayerUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
       const tileLayerOptions = { maxZoom: 18 };
        
-       this.placeInfo.location=position.coords;
-        this.placeInfo.tripId="be2b9fba-07cd-4326-a37b-17af0b6986c1";
+       this.place.location=position.coords;
+        this.place.tripId="be2b9fba-07cd-4326-a37b-17af0b6986c1";
       this.mapOptions = {
         layers: [
           tileLayer(tileLayerUrl, tileLayerOptions)
@@ -61,7 +71,7 @@ export class PlaceCreatePage {
     });
   }
     
-       onSubmit($event) {
+      onSubmit($event) {
 
         console.log(this.place);
 
@@ -77,19 +87,18 @@ export class PlaceCreatePage {
         this.placeError = false;
 
         // Perform the authentication request to the API.
-        this.placeService.createPlace(this.place).subscribe(place => {
-            this.place.location.type = "Point";
-            this.geolocation.getCurrentPosition().then(position => {
-                this.lat = position.coords.latitude;
-                this.lng = position.coords.longitude;
-                console.log("hallo:" + this.lat, this.lng);
-                this.place.location.coordinates = ([this.lng, this.lat]);
-                //this.place.location.coordinates[0] = +position.coords.longitude;
-                //this.place.location.coordinates[1] = +position.coords.latitude;
-            })   
-        } , err => {
+        this.placeService.createPlace(this.place).subscribe(tripPage => {
+            this.trip.placesCount++;
+            this.tripPage(this.trip);
+        }, err => {
             this.placeError = true;
             console.warn(`Creating Place failed: ${err.message}`);
+        });
+    }
+
+    tripPage(trip) {
+        this.navCtrl.push(TripsPage, {
+            trip: trip
         });
     }
     
@@ -102,6 +111,14 @@ export class PlaceCreatePage {
       console.log("You clicked the map at latitude: " + lat + " and longitude: " + lng);
           this.placeInfo.coordinates = [lat, lng];
   });
+  }
+    
+     takePicture() {
+    this.pictureService.takeAndUploadPicture().subscribe(picture => {
+      this.picture = picture;
+    }, err => {
+      console.warn('Could not take picture', err);
+    });
   }
 
 }
