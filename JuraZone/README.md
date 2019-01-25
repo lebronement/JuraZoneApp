@@ -2,8 +2,8 @@
 
   - [Introduction](#introduction)
   - [Utilisation](#utilisation)
-  - [Présentation](#presentation)
-  - [Procédure d'installation](#installation-procedure)
+  - [Presentation](#presentation)
+  - [Installation](#installation)
 
 ## Introduction
 
@@ -14,7 +14,7 @@ Dans le cadre du "AppMob" en troisième année de Bachelor en Ingénierie des m�
 
 Nous vous recomandons de télécharger notre application et de la compiller avec Ionic.
 
-## Présentation
+## Presentation
 
 Cette application vous permet de centraliser tous vos trips et tous les endroits que vous avez visités. Vous pourrez donc créer le trip de votre choix, à la place de votre choix. Notre application utilise de la géolocalisation. 
 
@@ -33,3 +33,6 @@ Afin de vous retrouver dans notre application, voici la liste des différentes f
 - Géolocalisation d'une place
 - Supprimer une place
 - Prendre une photo
+
+## Installation
+
