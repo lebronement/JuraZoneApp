@@ -8,6 +8,7 @@
 
   <ion-navbar>
     <ion-title>Trips</ion-title>
+
     <ion-buttons end>
     <button ion-button icon-only (click)='logOut()'>
       <ion-icon name='log-out'></ion-icon>
@@ -20,4 +21,22 @@
 
 <ion-content padding>
 
-</ion-content>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+<ion-list>
+
+
+<ion-item *ngFor="let trip of trips">
+  <ion-thumbnail item-left>
+    <img src="assets/img/thumbnail-totoro.png">
+  </ion-thumbnail>
+  <h2>{{ trip.title }}</h2>
+  <p>{{ trip.description }}</p>
+  <button ion-button (click)='goToSeeTrips(trip)' clear item-end>Voir plus</button>
+</ion-item>
+
+</ion-list>
+<p>
+  <button ion-button (click)='goToCreateTrips()' color="dark" large id="creer">Ajouter un nouveau Trip</button>
+</p>
+  
+

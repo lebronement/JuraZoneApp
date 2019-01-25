@@ -73,8 +73,8 @@ export class PlaceDetailPage {
   }
    deletePlace() {
         const confirm = this.alertCtrl.create({
-            title: 'Delete Place?',
-            message: 'Voulez-vous vraiment supprimer cette place?',
+            title: 'Delete User?',
+            message: 'Voulez-vous vraiment supprimer votre compte ?',
             buttons: [
                 {
                     text: 'Oui',
@@ -85,13 +85,13 @@ export class PlaceDetailPage {
                             this.placeList = placeList;
 
                         });
-                        console.log('Do you want to delete this place? - Yes clicked');
+                        console.log('Do you want to delete this user? - Yes clicked');
                     }
                 },
                 {
                     text: 'Non',
                     handler: () => {
-                        console.log('Do you want to delete this place? - No clicked');
+                        console.log('Do you want to delete this user? - No clicked');
                     }
                 }
             ]

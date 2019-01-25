@@ -1,10 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { config } from '../app/config';
-import { User } from'../models/user';
+import { Trip } from'../models/Trip';
 
 import { Observable } from 'rxjs/Rx';
-import { AuthProvider } from './auth/auth';
 
 /*
   Generated class for the PlacePrivider provider.
@@ -12,20 +11,18 @@ import { AuthProvider } from './auth/auth';
   and Angular DI.
 */
 @Injectable()
-export class UsersProvider {
+export class TripProvider {
 
-  constructor(public http: HttpClient, private auth: AuthProvider) { 
+  constructor(public http: HttpClient) { 
   }
 
-  getUsers(id: string): Observable<User[]> {
+  getTrips(): Observable<Trip[]> {
     return this.http
-      .get<User>(config.apiUrl+'/users' + id);
+      .get<Trip[]>(config.apiUrl+'/trips');
   }
-   deleteUser(id: string): Observable<{}> {
-    const deleteUserUrl = (config.apiUrl+"/users/" + id);
-       
-    return this.http.delete(deleteUserUrl);
-       this.auth.logOut();
+   deleteTrip(id: string): Observable<{}> {
+   const deleteTripsUrl = (config.apiUrl+'/trips/'+id);
+   return this.http.delete(deleteTripsUrl);
   }
    // createPlace(placeInfo){
     //   let placeUrl = config.apiUrl+"/places"; 
@@ -34,5 +31,5 @@ export class UsersProvider {
    //   this.PlaceEvent.publish('newPlace', true);
     //  this.navCtrl.pop()})
     
-   // }
+    
 }

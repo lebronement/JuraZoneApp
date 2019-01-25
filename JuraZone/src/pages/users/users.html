@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Users</ion-title>
+    <ion-title>User</ion-title>
       <ion-buttons end>
     <button ion-button icon-only (click)='logOut()'>
       <ion-icon name='log-out'></ion-icon>
@@ -19,9 +19,11 @@
 
 <ion-content>
   <ion-list>
-<ion-item *ngFor="let user of users">
-  <h2>{{ user.name }}</h2>
-        <p>User since {{user.createdAt | date:'dd/MM/yyyy'}}</p>
+<ion-item>
+  <h2>{{ user?.name }}</h2>
+        <p>User since {{user?.createdAt | date:'dd/MM/yyyy'}}</p>
+    <button ion-button (click)='deleteUser(User)' outline>Supprimer</button>
 </ion-item>
+
 
 </ion-list>
