@@ -4,6 +4,7 @@ import { config } from '../app/config';
 import { User } from'../models/user';
 
 import { Observable } from 'rxjs/Rx';
+import { AuthProvider } from './auth/auth';
 
 /*
   Generated class for the PlacePrivider provider.
@@ -13,17 +14,19 @@ import { Observable } from 'rxjs/Rx';
 @Injectable()
 export class UsersProvider {
 
-  constructor(public http: HttpClient) { 
+  constructor(public http: HttpClient, private auth: AuthProvider) { 
   }
 
-  getUsers(): Observable<User[]> {
+  getUsers(id: string): Observable<User[]> {
     return this.http
-      .get<User[]>(config.apiUrl+'/users');
+      .get<User>(config.apiUrl+'/users' + id);
   }
-  //  deletePlace(id: string): Observable<{}> {
-  //  const deletePlaceUrl = ${config.apiUrl}/places/ + id;
-  //  return this.http.delete(deletePlaceUrl);
-  //}
+   deleteUser(id: string): Observable<{}> {
+    const deleteUserUrl = (config.apiUrl+"/users/" + id);
+       
+    return this.http.delete(deleteUserUrl);
+       this.auth.logOut();
+  }
    // createPlace(placeInfo){
     //   let placeUrl = config.apiUrl+"/places"; 
 
