@@ -86,4 +86,4 @@ Vous pouvez ensuite ajouter des places :
 
 Ou encore ajouter des trips :
 
-![Smartphone app](https://raw.githubusercontent.com/lebronement/JuraZoneApp/master/screenshot/Ajouter_place.JPG "Smartphone app")
+![Smartphone app](https://raw.githubusercontent.com/lebronement/JuraZoneApp/master/screenshot/trips.png "Smartphone app")
