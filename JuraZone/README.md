@@ -3,6 +3,7 @@
   - [Introduction](#introduction)
   - [Utilisation](#utilisation)
   - [Presentation](#presentation)
+  - [Technologie](#technologie)
   - [Installation](#installation)
 
 ## Introduction
@@ -22,7 +23,7 @@ Afin de vous retrouver dans notre application, voici la liste des différentes f
 - Suppression d'un compte
 - Ajout d'un trip
 - Recherche de trips
-- (Modification d'un trips)
+- (Modification d'un trip)
 - Suppression d'un trip
 - Ajout d'une place
 - Choix du trip ou sera la place
@@ -33,6 +34,19 @@ Afin de vous retrouver dans notre application, voici la liste des différentes f
 ## Utilisation
 
 Nous vous recomandons de télécharger notre application et de la compiller avec Ionic.
+
+## Technologie
+
+Pour réaliser ce projet, nous avons utiliser les technologies suivantes :
+
+* [Node: version 8](https://angularjs.org/)
+* [Angular: version 5.2.11](https://angularjs.org/)
+* [Ionic-native: version 4.19.0](https://ionicframework.com/getting-started/)
+* [ionicons: version 3.0.0](https://ionicons.com/) 
+* [leaflet: version 1.4.0](https://leafletjs.com/)
+* [rxjs: version 5.5.11](https://rxjs-dev.firebaseapp.com/)
+* [HTML 5](https://www.w3.org/TR/html52/)
+* [CSS](https://www.w3.org/Style/CSS/)
 
 ## Installation
 
