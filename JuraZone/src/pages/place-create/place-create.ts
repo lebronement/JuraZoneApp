@@ -76,7 +76,7 @@ export class PlaceCreatePage {
         ],
         zoom: 15,
         center: latLng(position.coords.latitude, position.coords.longitude)
-      };
+      }; 
     }).catch(err => {
       console.warn(`Could not retrieve user position because: ${err.message}`);
     });
@@ -93,6 +93,7 @@ export class PlaceCreatePage {
 
         console.log(this.place);
           this.trip=this.getTrip(this.place.tripId);
+         // this.place.pictureHref=this.picture.url;
 
         // Prevent default HTML form behavior.
         $event.preventDefault();
@@ -115,14 +116,12 @@ export class PlaceCreatePage {
             alert("Ce trip n'est pas le vôtre, vous ne pouvez y ajouter une place");
         });
     }
-    
-            //this.trip.placesCount++;
-            //this.tripPage(this.trip);
-            //alert('Votre nouvelle place a été ajoutée !');
 
    PlacesPage() {
         this.navCtrl.push(PlacesPage, {}, { animate: false });
     }
+    
+    // La raison de ce code est que nous souhaitons que l'user puisser cliquer sur une map pour choisir où mettre sa place, mais nous avons dû simplifier
     
      onMapReady(map: Map) {
     this.map = map;

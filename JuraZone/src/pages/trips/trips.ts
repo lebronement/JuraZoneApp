@@ -4,10 +4,12 @@ import { NewtripsPage } from '../newtrips/newtrips';
 import { ArticletripsPage } from '../articletrips/articletrips';
 import { Trip } from '../../models/Trip';
 import { TripProvider } from '../../providers/tripprovider';
+
 import { config } from '../../app/config';
 import { HttpClient } from '@angular/common/http';
 
 
+import { AuthProvider } from '../../providers/auth/auth';
 
 
 
@@ -35,8 +37,8 @@ export class TripsPage {
 
   
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private tripService: TripProvider, private http : HttpClient) {
-    
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private tripService: TripProvider, private auth: AuthProvider, private http : HttpClient) {
   }
 
   ionViewDidLoad() {
@@ -53,6 +55,11 @@ export class TripsPage {
 
 
   }
+    logOut() {
+    this.auth.logOut();
+  }
+    
+    
 
    listTrips() {
     let tripsURL = (config.apiUrl+'/trips');

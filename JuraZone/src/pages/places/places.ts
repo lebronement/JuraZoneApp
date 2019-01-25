@@ -4,6 +4,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { PlaceMapPage } from '../place-map/place-map';
 import { PlaceListPage } from '../place-list/place-list';
 import { PlaceCreatePage } from '../place-create/place-create';
+import { AuthProvider } from '../../providers/auth/auth';
  
 /**
  * Generated class for the PlacesPage page.
@@ -20,7 +21,7 @@ export class PlacesPage {
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthProvider) {
   }
 
  ionViewDidLoad() {
@@ -33,9 +34,14 @@ export class PlacesPage {
     goToList() {
     this.navCtrl.push(PlaceListPage);
   }
-    goToAddd() {
+    goToAdd() {
     this.navCtrl.push(PlaceCreatePage);
   }
+    logOut() {
+    this.auth.logOut();
+  }
+    
+    
     
    
 
