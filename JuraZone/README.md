@@ -67,6 +67,10 @@ npm install
   
   Créer un compte et connectey vous. Suivez ensuite les instructions de l'application.
 
-## Visuel
+## Visuels
   
 ![Smartphone app](https://raw.githubusercontent.com/lebronement/JuraZoneApp/master/screenshot/Ajouter_place.JPG "Smartphone app")
+
+![Smartphone app](https://raw.githubusercontent.com/lebronement/JuraZoneApp/master/screenshot/Sign-up.JPG "Smartphone app")
+
+![Smartphone app](https://raw.githubusercontent.com/lebronement/JuraZoneApp/master/screenshot/User.JPG "Smartphone app")
