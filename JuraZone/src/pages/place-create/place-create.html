@@ -15,9 +15,10 @@
 
 <ion-content padding>
    <button ion-button (click)='takePicture()' type="button">Prendre une photo</button>
-          <img *ngIf='picture' [src]='picture.url' /><br>
+          
     <form (submit)='onSubmit($event)' >
         <ion-list>
+            <p>Les coordonnées de la place seront celle de votre géolocalisation.</p>
 
             <ion-item>
                 <ion-label color="primary" stacked>Nom</ion-label>
@@ -34,6 +35,9 @@
                   <ion-option *ngFor='let trip of trips' value="{{trip.id}}" >{{trip.title}}</ion-option>
                 </ion-select>
           </ion-item>
+           <ion-item>
+               <img *ngIf='picture' [src]='picture.url' /><br>
+           </ion-item>
             
             
             
@@ -43,9 +47,9 @@
         </ion-list>
     </form>
     
-    <div class="enroll-map">
+    <!--<div class="enroll-map">
                 <div class="alert-msg" *ngIf='mapOptions==null'>L'application charge vos données de localisation ... Veuillez patienter (ou, vérifiez que vous avez autorisé l'app à voir votre position.</div>
                 <div class='map' *ngIf='mapOptions' leaflet [leafletOptions]='mapOptions' [leafletLayers]='mapMarkers' (leafletMapReady)='onMapReady($event)'></div>
 
-            </div>
+            </div>-->
 </ion-content>
