@@ -4,7 +4,7 @@ import { NewtripsPage } from '../newtrips/newtrips';
 import { ArticletripsPage } from '../articletrips/articletrips';
 import { Trip } from '../../models/Trip';
 import { TripProvider } from '../../providers/tripprovider';
-
+import { AuthProvider } from '../../providers/auth/auth';
 
 
 
@@ -25,7 +25,7 @@ export class TripsPage {
 
   trips: Trip[]; 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private tripService: TripProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private tripService: TripProvider, private auth: AuthProvider) {
   }
 
   ionViewDidLoad() {
@@ -41,6 +41,11 @@ export class TripsPage {
 
 
   }
+    logOut() {
+    this.auth.logOut();
+  }
+    
+    
 
 
   
