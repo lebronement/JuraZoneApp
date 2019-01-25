@@ -88,6 +88,7 @@ import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-inte
     PictureProvider,
       PlaceProvider,
     LoginProvider,
+      UsersProvider,
     AuthProvider,
     AuthInterceptorProvider,
       { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true }
