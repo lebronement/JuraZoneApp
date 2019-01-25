@@ -8,7 +8,11 @@
 
     <ion-navbar>
         <ion-title>Places</ion-title>
-        <ion-title class="right">Logout</ion-title>
+        <ion-buttons end>
+    <button ion-button icon-only (click)='logOut()'>
+      <ion-icon name='log-out'></ion-icon>
+    </button>
+  </ion-buttons>
     </ion-navbar>
 
 </ion-header>
@@ -16,8 +20,9 @@
 
 <ion-content padding>
 
-  <button ion-button (click)='goToMap()'>Go to map</button>
-  <button ion-button (click)='goToList()'>Go to list</button>
+  <button ion-button color="dark" (click)='goToMap()' style="width: 100%;">Afficher la map</button>
+  <button ion-button color="dark"  (click)='goToList()' style="width: 100%;">Afficher en liste</button>
+  <button ion-button color="dark"  (click)='goToAdd()' style="width: 100%;">Ajouter une nouvelle place</button>
 </ion-content>
 
 

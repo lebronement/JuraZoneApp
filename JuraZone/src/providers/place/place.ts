@@ -2,8 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { config } from '../../app/config';
 import { Place } from'../../models/place';
+import { map } from 'rxjs/operators';
 
 import { Observable } from 'rxjs/Rx';
+
+import { TripResponse } from '../../models/tripresponse';
 
 /*
   Generated class for the PlacePrivider provider.
@@ -24,12 +27,8 @@ export class PlaceProvider {
     const deletePlaceUrl = `${config.apiUrl}/places/` + id;
     return this.http.delete(deletePlaceUrl);
   }
-    createPlace(placeInfo){
-       let placeUrl = config.apiUrl+"/places"; 
-
-    this.http.post<Place>(placeUrl, this.placeInfo).subscribe(createdPlace => {
-      this.PlaceEvent.publish('newPlace', true);
-      this.navCtrl.pop()})
-    
-    }
+     createPlace(tripResponse: TripResponse): Observable<Place> {
+    const newPlaceUrl = `${config.apiUrl}/places`;
+    return this.http.post<Place>(newPlaceUrl, tripResponse);
+  }
 }

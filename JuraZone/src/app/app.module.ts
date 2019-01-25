@@ -105,6 +105,7 @@ import { TripProvider } from '../providers/tripprovider';
 
       PlaceProvider,
     LoginProvider,
+      UsersProvider,
     AuthProvider,
     UsersProvider,
     AuthInterceptorProvider,

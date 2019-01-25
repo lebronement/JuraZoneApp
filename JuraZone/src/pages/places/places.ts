@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { PlaceMapPage } from '../place-map/place-map';
 import { PlaceListPage } from '../place-list/place-list';
+import { PlaceCreatePage } from '../place-create/place-create';
  
 /**
  * Generated class for the PlacesPage page.
@@ -32,20 +33,11 @@ export class PlacesPage {
     goToList() {
     this.navCtrl.push(PlaceListPage);
   }
+    goToAddd() {
+    this.navCtrl.push(PlaceCreatePage);
+  }
     
-   /*  showPlace() {
-    this.navCtrl.push(PlacePage);
-  }
-
-  showTrip() {
-    this.navCtrl.parent.select(0).then(() => {
-      this.navCtrl.parent.getSelected().push(TripPage);
-    });
-  }
-
-  showUser() {
-    alert("todo: show user");
-  }*/
+   
 
 }
 

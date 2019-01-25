@@ -14,25 +14,38 @@
 
 
 <ion-content padding>
-    <form>
+   <button ion-button (click)='takePicture()' type="button">Prendre une photo</button>
+          <img *ngIf='picture' [src]='picture.url' /><br>
+    <form (submit)='onSubmit($event)' >
         <ion-list>
 
             <ion-item>
                 <ion-label color="primary" stacked>Nom</ion-label>
-                <ion-input type="text" name="ion-title" placeholder="Ajouter un nom" [(ngModel)]="placeInfo.name"></ion-input>
+                <ion-input type="text" name="ion-title" placeholder="Ajouter un nom" [(ngModel)]="place.name"></ion-input>
             </ion-item>
 
             <ion-item>
                 <ion-label floating>Description</ion-label>
-                <ion-textarea rows="5" type='text' name='ion-description' [(ngModel)]="placeInfo.description"></ion-textarea>
+                <ion-textarea rows="5" type='text' name='ion-description' [(ngModel)]="place.description"></ion-textarea>
             </ion-item>
-            <div class="enroll-map">
+            <ion-item>
+                <ion-label>Trip relié </ion-label>
+                <ion-select placeholder="Select One" name="ion-trip" [(ngModel)]="place.tripId">
+                  <ion-option *ngFor='let trip of trips' value="{{trip.id}}" >{{trip.title}}</ion-option>
+                </ion-select>
+          </ion-item>
+            
+            
+            
+            <button ion-button color="dark" large id="ajouter" type="submit" >Ajouter</button>
+            
+
+        </ion-list>
+    </form>
+    
+    <div class="enroll-map">
                 <div class="alert-msg" *ngIf='mapOptions==null'>L'application charge vos données de localisation ... Veuillez patienter (ou, vérifiez que vous avez autorisé l'app à voir votre position.</div>
                 <div class='map' *ngIf='mapOptions' leaflet [leafletOptions]='mapOptions' [leafletLayers]='mapMarkers' (leafletMapReady)='onMapReady($event)'></div>
 
             </div>
-            <button ion-button color="dark" large id="ajouter" type="submit" (click)="createplace()">Ajouter</button>
-
-        </ion-list>
-    </form>
 </ion-content>

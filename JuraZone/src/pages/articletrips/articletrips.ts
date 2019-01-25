@@ -41,7 +41,7 @@ export class ArticletripsPage {
                     this.TripService.deleteTrip(this.trip.id).subscribe();
                     this.navCtrl.setRoot(TripsPage, { opentab: 1 });
                     this.TripService.getTrips().subscribe(tripList => {
-                        this.tripList = tripList;
+                        this.tripList = tripList; 
 
                     });
                     console.log('Do you want to delete this place? - Yes clicked');
