@@ -55,6 +55,7 @@ logOut() {
   }
 
 
+
 deleteUser() {
         const confirm = this.alertCtrl.create({
             title: 'Delete Place?',
@@ -82,6 +83,7 @@ deleteUser() {
         });
         confirm.present();
     }
+
 
 
 
