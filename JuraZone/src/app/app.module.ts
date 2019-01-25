@@ -1,6 +1,5 @@
-
 import { NgModule, ErrorHandler
-       } from '@angular/core';
+} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -28,6 +27,7 @@ import { NewtripsPage } from '../pages/newtrips/newtrips';
 import { ArticletripsPage } from '../pages/articletrips/articletrips';
 
 
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -45,70 +45,71 @@ import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-inte
 import { TripProvider } from '../providers/tripprovider';
 
 
+
 @NgModule({
-  declarations: [
-    MyApp,
-    HomePage,
-    TabsPage,
-    UsersPage,
-      PlacesPage,
-    PlaceListPage,
-      PlaceMapPage,
-      TripsPage,
-      LoginPage,
-      SignUpPage,
-      PlaceDetailPage,
-      PlaceUpdatePage,
-      PlaceCreatePage,
-      NewtripsPage,
-      ArticletripsPage
+declarations: [
+MyApp,
+HomePage,
+TabsPage,
+UsersPage,
+PlacesPage,
+PlaceListPage,
+PlaceMapPage,
+TripsPage,
+LoginPage,
+SignUpPage,
+PlaceDetailPage,
+PlaceUpdatePage,
+PlaceCreatePage,
+NewtripsPage,
+ArticletripsPage,
 
-  ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp),
-    LeafletModule.forRoot(), 
-    HttpClientModule,
-    HttpModule,
-    IonicStorageModule.forRoot()
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    HomePage,
-    TabsPage,
-      UsersPage,
-      PlacesPage,
-    PlaceListPage,
-      PlaceMapPage,
-      TripsPage,
 
-      LoginPage,
-      SignUpPage,
-      PlaceDetailPage,
-      PlaceUpdatePage,
-      PlaceCreatePage,
-      NewtripsPage,
-      ArticletripsPage
-  ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-      Geolocation,
-      Camera,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PictureProvider,
+],
+imports: [
+BrowserModule,
+IonicModule.forRoot(MyApp),
+LeafletModule.forRoot(), 
+HttpClientModule,
+HttpModule,
+IonicStorageModule.forRoot()
+],
+bootstrap: [IonicApp],
+entryComponents: [
+MyApp,
+HomePage,
+TabsPage,
+UsersPage,
+PlacesPage,
+PlaceListPage,
+PlaceMapPage,
+TripsPage,
 
-      PlaceProvider,
-    LoginProvider,
-      UsersProvider,
-    AuthProvider,
-    UsersProvider,
-    AuthInterceptorProvider,
-      { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },
+LoginPage,
+SignUpPage,
+PlaceDetailPage,
+PlaceUpdatePage,
+PlaceCreatePage,
+NewtripsPage,
+ArticletripsPage,
 
-    TripProvider
-  ]
+],
+providers: [
+StatusBar,
+SplashScreen,
+Geolocation,
+Camera,
+{provide: ErrorHandler, useClass: IonicErrorHandler},
+PictureProvider,
+
+PlaceProvider,
+LoginProvider,
+AuthProvider,
+UsersProvider,
+AuthInterceptorProvider,
+{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },
+
+TripProvider
+]
 })
 export class AppModule {}
-

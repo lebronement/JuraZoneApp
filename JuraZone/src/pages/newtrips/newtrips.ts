@@ -40,11 +40,7 @@ export class NewtripsPage {
 
     let tripUrl = "https://comem-appmob-2018-2019-c.herokuapp.com/api/trips";
 
-    this.http.post<Trip>(tripUrl, this.tripInfo, {
-      headers: {
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NDg5NDU4MzIuNjM4LCJzdWIiOiJmNTk2YWFmYy1jZDVjLTQ4N2YtOGUzOS1lMWM5YzY0ZTFmZGQiLCJpYXQiOjE1NDc3MzYyMzJ9.CSNZ1G103kn2oaDKHGlxc-hpLVSeEp8NWX8WIHAjJeA'
-      }
-    }).subscribe(createdTrip => {
+    this.http.post<Trip>(tripUrl, this.tripInfo).subscribe(createdTrip => {
       this.TripEvent.publish('newTrip', true);
       this.navCtrl.pop()})
     

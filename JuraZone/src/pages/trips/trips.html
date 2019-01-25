@@ -6,37 +6,41 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Trips</ion-title>
-
-    <ion-buttons end>
-    <button ion-button icon-only (click)='logOut()'>
-      <ion-icon name='log-out'></ion-icon>
-    </button>
-  </ion-buttons>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-<ion-list>
-
-
-<ion-item *ngFor="let trip of trips">
-  <ion-thumbnail item-left>
-    <img src="assets/img/thumbnail-totoro.png">
-  </ion-thumbnail>
-  <h2>{{ trip.title }}</h2>
-  <p>{{ trip.description }}</p>
-  <button ion-button (click)='goToSeeTrips(trip)' clear item-end>Voir plus</button>
-</ion-item>
-
-</ion-list>
-<p>
-  <button ion-button (click)='goToCreateTrips()' color="dark" large id="creer">Ajouter un nouveau Trip</button>
-</p>
+    <ion-navbar>
+      <ion-title>Trips</ion-title>
   
-
+      <ion-title class="right">Logout</ion-title>
+        
+  
+    </ion-navbar>
+  
+    
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+  
+      
+  <ion-list>
+      <ion-item>
+          <ion-input type='text' name='search' [(ngModel)]='search'></ion-input>
+      </ion-item>
+      <div padding></div>
+      <div>
+        <button ion-button block type='submit' color="dark" large id="search" (click)="listTrips()">
+            <ion-icon name="search"></ion-icon>
+        </button>
+      </div>
+  
+      <button ion-button (click)='goToCreateTrips()' color="dark" large id="creer">Ajouter un nouveau Trip</button>
+  <ion-item *ngFor="let trip of trips">
+    <h1>{{ trip.title }}</h1>
+    <h2>{{ trip.description }}</h2>
+    <button ion-button (click)='goToSeeTrips(trip)' clear item-end>Voir plus</button>
+  </ion-item>
+  </ion-list>
+  <p>
+    
+  </p>
+    

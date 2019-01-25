@@ -24,12 +24,17 @@ export class TripProvider {
    const deleteTripsUrl = (config.apiUrl+'/trips/'+id);
    return this.http.delete(deleteTripsUrl);
   }
-   // createPlace(placeInfo){
-    //   let placeUrl = config.apiUrl+"/places"; 
 
-  //  this.http.post<Place>(placeUrl, this.placeInfo).subscribe(createdPlace => {
-   //   this.PlaceEvent.publish('newPlace', true);
-    //  this.navCtrl.pop()})
+  modifTrip(id: string, body: Trip): Observable<Trip> {
+    const modifTripUrl = `${config.apiUrl}/trips/` + id;
+    return this.http.patch<Trip>(modifTripUrl, body, {
+      params: {
+        include: 'user'
+      }
+    });
+  }
+
+
+
     
-    
-}
+  }

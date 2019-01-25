@@ -3,6 +3,7 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { Trip } from '../../models/Trip';
 import { TripsPage } from '../../pages/trips/trips';
 import { TripProvider } from '../../providers/tripprovider';
+import { ModiftripPage } from '../modiftrip/modiftrip';
 /**
  * Generated class for the ArticletripsPage page.
  *
@@ -17,6 +18,8 @@ import { TripProvider } from '../../providers/tripprovider';
 export class ArticletripsPage {
 
   trip: Trip;
+
+  tripList: Trip[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController, private TripService : TripProvider) {
   }
@@ -40,7 +43,7 @@ export class ArticletripsPage {
                     this.TripService.deleteTrip(this.trip.id).subscribe();
                     this.navCtrl.setRoot(TripsPage, { opentab: 1 });
                     this.TripService.getTrips().subscribe(tripList => {
-                        this.tripList = tripList; 
+                        this.tripList = tripList;
 
                     });
                     console.log('Do you want to delete this place? - Yes clicked');
@@ -57,6 +60,10 @@ export class ArticletripsPage {
     confirm.present();
 
    
+}
+
+goTomodifTrips() {
+  this.navCtrl.push(ModiftripPage);
 }
 
 
