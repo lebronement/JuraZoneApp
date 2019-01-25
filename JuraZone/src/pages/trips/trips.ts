@@ -80,8 +80,6 @@ export class TripsPage {
     this.navCtrl.push(ArticletripsPage, {trip : trip});
   }
 
-  tripUser() {
-    alert("todo: trip user");
-  }
+
 }
 

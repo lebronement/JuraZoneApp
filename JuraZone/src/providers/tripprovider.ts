@@ -25,6 +25,15 @@ export class TripProvider {
    return this.http.delete(deleteTripsUrl);
   }
 
+  modifTrip(id: string, body: Trip): Observable<Trip> {
+    const modifTripUrl = `${config.apiUrl}/trips/` + id;
+    return this.http.patch<Trip>(modifTripUrl, body, {
+      params: {
+        include: 'user'
+      }
+    });
+  }
+
 
 
     

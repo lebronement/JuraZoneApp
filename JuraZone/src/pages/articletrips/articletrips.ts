@@ -3,6 +3,7 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { Trip } from '../../models/Trip';
 import { TripsPage } from '../../pages/trips/trips';
 import { TripProvider } from '../../providers/tripprovider';
+import { ModiftripPage } from '../modiftrip/modiftrip';
 /**
  * Generated class for the ArticletripsPage page.
  *
@@ -57,6 +58,10 @@ export class ArticletripsPage {
     confirm.present();
 
    
+}
+
+goTomodifTrips() {
+  this.navCtrl.push(ModiftripPage);
 }
 
 
