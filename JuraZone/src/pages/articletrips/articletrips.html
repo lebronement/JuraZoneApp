@@ -24,11 +24,11 @@
         <ion-card-content>
                 <h2>{{trip?.description}}</h2>
                 <br>
-              <ion-icon name="md-time"> {{trip?.updatedAt | date:'dd/MM/yyyy'}}</ion-icon>
+              <p>crée le {{trip?.updatedAt | date:'dd/MM/yyyy'}}</p> 
         </ion-card-content>
       </ion-card>
 
     <button ion-button block id=btn-ajouterplace color="dark">Ajouter une place</button>
-    <button ion-button (click)='deleteTrip(trip)' outline>Supprimer</button>
+    <button ion-button block (click)='deleteTrip(trip)' color="dark" >Supprimer</button>
 
 </ion-content>

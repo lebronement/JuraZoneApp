@@ -28,6 +28,7 @@ export class PlaceDetailPage {
     mapOptions: MapOptions;
     mapMarkers: Marker[];
     map: Map;
+    placeList: Place[];
     
     
 

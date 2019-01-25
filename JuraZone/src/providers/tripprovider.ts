@@ -24,12 +24,9 @@ export class TripProvider {
    const deleteTripsUrl = (config.apiUrl+'/trips/'+id);
    return this.http.delete(deleteTripsUrl);
   }
-   // createPlace(placeInfo){
-    //   let placeUrl = config.apiUrl+"/places"; 
 
-  //  this.http.post<Place>(placeUrl, this.placeInfo).subscribe(createdPlace => {
-   //   this.PlaceEvent.publish('newPlace', true);
-    //  this.navCtrl.pop()})
+
+
     
-    
-}
+  }
+

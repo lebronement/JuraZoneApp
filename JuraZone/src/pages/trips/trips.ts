@@ -4,6 +4,10 @@ import { NewtripsPage } from '../newtrips/newtrips';
 import { ArticletripsPage } from '../articletrips/articletrips';
 import { Trip } from '../../models/Trip';
 import { TripProvider } from '../../providers/tripprovider';
+import { config } from '../../app/config';
+import { HttpClient } from '@angular/common/http';
+
+
 
 
 
@@ -23,14 +27,22 @@ export class TripsPage {
 
 
 
-  trips: Trip[]; 
+  trips: Trip[];
+  
+  tripList: Trip[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private tripService: TripProvider) {
+  search: string;
+
+  
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private tripService: TripProvider, private http : HttpClient) {
+    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TripsPage');
     this.loadTrips();
+    
   }
 
   private loadTrips(){
@@ -41,6 +53,19 @@ export class TripsPage {
 
 
   }
+
+   listTrips() {
+    let tripsURL = (config.apiUrl+'/trips');
+
+    this.http.get<Trip[]>(tripsURL, {
+      params:{
+        search : this.search
+      }
+    }).subscribe(tripsList => {
+      this.trips = tripsList;
+    });
+  }
+
 
 
   
@@ -55,4 +80,8 @@ export class TripsPage {
     this.navCtrl.push(ArticletripsPage, {trip : trip});
   }
 
+  tripUser() {
+    alert("todo: trip user");
+  }
 }
+
