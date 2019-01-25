@@ -65,12 +65,18 @@ npm install
 
   Télécharger [Ionic DevApp](https://itunes.apple.com/us/app/ionic-devapp/id1233447133?mt=8) sur AppStore ou PlayStore.
   
-  Créer un compte et connectey vous. Suivez ensuite les instructions de l'application.
+  Créez un compte et connectez vous. Suivez ensuite les instructions de l'application.
 
 ## Visuels
   
+Lorsque vous lançerez l'application, la pagne de création de compte s'ouvrira :
+  
+![Smartphone app](https://raw.githubusercontent.com/lebronement/JuraZoneApp/master/screenshot/Sign-up.JPG "Smartphone app")
+  
+Une fois entré dans l'application, après être passé par le login, vous arriverez sur votre page "User". Votre usernam est affiché en haut de la page : 
+  
 ![Smartphone app](https://raw.githubusercontent.com/lebronement/JuraZoneApp/master/screenshot/Ajouter_place.JPG "Smartphone app")
 
-![Smartphone app](https://raw.githubusercontent.com/lebronement/JuraZoneApp/master/screenshot/Sign-up.JPG "Smartphone app")
+Vous pouvez ensuite ajoutez des places :
 
 ![Smartphone app](https://raw.githubusercontent.com/lebronement/JuraZoneApp/master/screenshot/User.JPG "Smartphone app")
