@@ -59,7 +59,7 @@ npm install
 
 ```
 
-## Installation
+## Smartphone
 
 #### Ionic DevApp
 
