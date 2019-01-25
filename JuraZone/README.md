@@ -27,7 +27,6 @@ Afin de vous retrouver dans notre application, voici la liste des différentes f
 - Suppression d'un compte
 - Ajout d'un trip
 - Recherche de trips
-- (Modification d'un trip)
 - Suppression d'un trip
 - Ajout d'une place
 - Choix du trip ou sera la place
