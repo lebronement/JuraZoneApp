@@ -69,14 +69,14 @@ npm install
 
 ## Visuels
   
-Lorsque vous lançerez l'application, la pagne de création de compte s'ouvrira :
+Lorsque vous lancerez l'application, le page de création de comptes s'ouvrira :
   
 ![Smartphone app](https://raw.githubusercontent.com/lebronement/JuraZoneApp/master/screenshot/Sign-up.JPG "Smartphone app")
   
-Une fois entré dans l'application, après être passé par le login, vous arriverez sur votre page "User". Votre usernam est affiché en haut de la page : 
+Une fois entré dans l'application, après être passé par le login, vous arriverez sur votre page "User". Votre username est affiché en haut de la page : 
   
-![Smartphone app](https://raw.githubusercontent.com/lebronement/JuraZoneApp/master/screenshot/Ajouter_place.JPG "Smartphone app")
-
-Vous pouvez ensuite ajoutez des places :
-
 ![Smartphone app](https://raw.githubusercontent.com/lebronement/JuraZoneApp/master/screenshot/User.JPG "Smartphone app")
+
+Vous pouvez ensuite ajouter des places :
+
+![Smartphone app](https://raw.githubusercontent.com/lebronement/JuraZoneApp/master/screenshot/Ajouter_place.JPG "Smartphone app")
