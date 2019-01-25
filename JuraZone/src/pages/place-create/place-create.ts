@@ -109,7 +109,7 @@ export class PlaceCreatePage {
         // Perform the authentication request to the API.
         this.placeService.createPlace(this.place).subscribe(tripPage => {
             this.trip.placesCount++;
-            this.tripPage(this.trip);
+            this.navCtrl.push(PlacesPage);
         }, err => {
             this.placeError = true;
             console.warn(`Creating Place failed: ${err.message}`);
