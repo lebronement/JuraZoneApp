@@ -5,6 +5,7 @@
   - [Presentation](#presentation)
   - [Technologie](#technologie)
   - [Installation](#installation)
+  - [Smartphone](#smartphone)
 
 ## Introduction
 
@@ -57,3 +58,12 @@ cd JuraZoneApp
 npm install
 
 ```
+
+## Installation
+
+#### Ionic DevApp
+
+  Télécharger [Ionic DevApp](https://itunes.apple.com/us/app/ionic-devapp/id1233447133?mt=8) sur AppStore
+  
+  Créer un compte et connectey vous. Suivez ensuite les instructions de l'application.
+  
