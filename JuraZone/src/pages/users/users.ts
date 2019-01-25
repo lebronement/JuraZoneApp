@@ -54,6 +54,7 @@ logOut() {
 
   }
 
+<<<<<<< HEAD
 deleteUser() {
         const confirm = this.alertCtrl.create({
             title: 'Delete Place?',
@@ -83,4 +84,6 @@ deleteUser() {
     }
 
 
+=======
+>>>>>>> parent of 50bd8193... tripV8
 }

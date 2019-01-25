@@ -26,7 +26,6 @@ import { PlaceUpdatePage } from '../pages/place-update/place-update';
 import { PlaceCreatePage } from '../pages/place-create/place-create';
 import { NewtripsPage } from '../pages/newtrips/newtrips';
 import { ArticletripsPage } from '../pages/articletrips/articletrips';
-import { ModiftripPage } from '../pages/modiftrip/modiftrip';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -46,7 +45,6 @@ import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-inte
 import { TripProvider } from '../providers/tripprovider';
 
 
-
 @NgModule({
   declarations: [
     MyApp,
@@ -63,8 +61,7 @@ import { TripProvider } from '../providers/tripprovider';
       PlaceUpdatePage,
       PlaceCreatePage,
       NewtripsPage,
-      ArticletripsPage,
-      ModiftripPage
+      ArticletripsPage
 
   ],
   imports: [
@@ -92,8 +89,7 @@ import { TripProvider } from '../providers/tripprovider';
       PlaceUpdatePage,
       PlaceCreatePage,
       NewtripsPage,
-      ArticletripsPage,
-      ModiftripPage
+      ArticletripsPage
   ],
   providers: [
     StatusBar,

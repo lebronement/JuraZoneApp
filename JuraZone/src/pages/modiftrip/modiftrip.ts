@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Trip } from '../../models/Trip';
-import { TripProvider } from '../../providers/tripprovider';
 
 /**
  * Generated class for the ModiftripPage page.
@@ -17,16 +15,11 @@ import { TripProvider } from '../../providers/tripprovider';
 })
 export class ModiftripPage {
 
-  trip: Trip;
-  tripMod: Trip;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private TripService : TripProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ModiftripPage');
-
-    
   }
 
 }
