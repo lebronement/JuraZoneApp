@@ -8,8 +8,10 @@ import { PlaceRequest } from '../../models/createplace';
 import { Place } from '../../models/place';
 import { Trip } from '../../models/trip';
 import { PlaceProvider } from '../../providers/place/place';
+import { TripProvider } from '../../providers/tripprovider';
 
-import { TripsPage } from "../trips/trips"
+import { TripsPage } from "../trips/trips";
+import { PlacesPage } from "../places/places"
 
 import { Geolocation } from '@ionic-native/geolocation';
 import { latLng, MapOptions, marker, Marker, tileLayer, Map } from 'leaflet';
@@ -40,6 +42,7 @@ export class PlaceCreatePage {
     location: Coordinates;
     coordinates: number[];
     placeError:boolean;
+    trips: Trip[];
     
     @ViewChild(NgForm)
     form: NgForm;
@@ -47,7 +50,7 @@ export class PlaceCreatePage {
     pictureData: string;
  picture: QimgImage;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,  private http: HttpClient, public PlaceEvent: Events, private geolocation: Geolocation, private placeService : PlaceProvider, private camera: Camera, private pictureService: PictureProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,  private http: HttpClient, public PlaceEvent: Events, private geolocation: Geolocation, private placeService : PlaceProvider, private tripService : TripProvider, private camera: Camera, private pictureService: PictureProvider) {
        this.place = new PlaceRequest();
        this.place = {
       location: {
@@ -55,11 +58,10 @@ export class PlaceCreatePage {
         type: "Point"
         }
        }
-        
+       this.loadTrips(); 
   }
 
   ionViewDidLoad() {
-      this.place.tripId = "1e09f583-4635-41d3-aa4f-b6b1a3c73e01";
     this.geolocation.getCurrentPosition().then(position => {
       console.log(`User is at ${position.coords.latitude}, ${position.coords.longitude}`);
       const tileLayerUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -80,9 +82,17 @@ export class PlaceCreatePage {
     });
   }
     
+    loadTrips(){
+        this.tripService.getTrips().subscribe(tripsList =>{
+            this.trips = tripsList;
+        }
+       );
+    }
+    
       onSubmit($event) {
 
         console.log(this.place);
+          this.trip=this.getTrip(this.place.tripId);
 
         // Prevent default HTML form behavior.
         $event.preventDefault();
@@ -102,13 +112,16 @@ export class PlaceCreatePage {
         }, err => {
             this.placeError = true;
             console.warn(`Creating Place failed: ${err.message}`);
+            alert("Ce trip n'est pas le vôtre, vous ne pouvez y ajouter une place");
         });
     }
+    
+            //this.trip.placesCount++;
+            //this.tripPage(this.trip);
+            //alert('Votre nouvelle place a été ajoutée !');
 
-    tripPage(trip) {
-        this.navCtrl.push(TripsPage, {
-            trip: trip
-        });
+   PlacesPage() {
+        this.navCtrl.push(PlacesPage, {}, { animate: false });
     }
     
      onMapReady(map: Map) {
@@ -128,6 +141,10 @@ export class PlaceCreatePage {
     }, err => {
       console.warn('Could not take picture', err);
     });
+  }
+     getTrip(id): Observable<Trip> {
+    return this.http
+      .get<Trip>(config.apiUrl+'/trips/'+id);
   }
 
 }

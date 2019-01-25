@@ -28,6 +28,12 @@
                 <ion-label floating>Description</ion-label>
                 <ion-textarea rows="5" type='text' name='ion-description' [(ngModel)]="place.description"></ion-textarea>
             </ion-item>
+            <ion-item>
+                <ion-label>Trip relié </ion-label>
+                <ion-select placeholder="Select One" name="ion-trip" [(ngModel)]="place.tripId">
+                  <ion-option *ngFor='let trip of trips' value="{{trip.id}}" >{{trip.title}}</ion-option>
+                </ion-select>
+          </ion-item>
             
             
             
