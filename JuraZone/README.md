@@ -66,4 +66,7 @@ npm install
   Télécharger [Ionic DevApp](https://itunes.apple.com/us/app/ionic-devapp/id1233447133?mt=8) sur AppStore ou PlayStore.
   
   Créer un compte et connectey vous. Suivez ensuite les instructions de l'application.
+
+## Visuel
   
+![Smartphone app](https://raw.githubusercontent.com/lebronement/JuraZoneApp/master/screenshot/Ajouter_place.JPG "Smartphone app")
