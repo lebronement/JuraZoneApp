@@ -1,14 +1,12 @@
 export class Place {
     name: String;
     description: String;
-     location: {
-        coordinates: [
-            number,
-            number
-        ],
-        type: string
-    };
+    location: GeoJsonPoint;
     tripHref: String;
     tripId: String;
     pictureUrl : String;
+}
+export class GeoJsonPoint {
+    type: string;
+    coordinates: number[];
 }

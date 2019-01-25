@@ -6,6 +6,7 @@ import { NgForm } from "@angular/forms";
 
 import { PlaceRequest } from '../../models/createplace';
 import { Place } from '../../models/place';
+import { Trip } from '../../models/trip';
 import { PlaceProvider } from '../../providers/place/place';
 
 import { TripsPage } from "../trips/trips"
@@ -48,17 +49,25 @@ export class PlaceCreatePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,  private http: HttpClient, public PlaceEvent: Events, private geolocation: Geolocation, private placeService : PlaceProvider, private camera: Camera, private pictureService: PictureProvider) {
        this.place = new PlaceRequest();
+       this.place = {
+      location: {
+        coordinates: [0, 0],
+        type: "Point"
+        }
+       }
         
   }
 
   ionViewDidLoad() {
+      this.place.tripId = "1e09f583-4635-41d3-aa4f-b6b1a3c73e01";
     this.geolocation.getCurrentPosition().then(position => {
       console.log(`User is at ${position.coords.latitude}, ${position.coords.longitude}`);
       const tileLayerUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
       const tileLayerOptions = { maxZoom: 18 };
        
-       this.place.location=position.coords;
-        this.place.tripId="be2b9fba-07cd-4326-a37b-17af0b6986c1";
+       this.place.location={
+           coordinates : [position.coords.latitude, position.coords.longitude],
+           type: "Point"};
       this.mapOptions = {
         layers: [
           tileLayer(tileLayerUrl, tileLayerOptions)
